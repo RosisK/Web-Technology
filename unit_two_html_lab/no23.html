@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twenty Three</title>
+</head>
+<style>
+    footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      pointer-events: none;
+    }
+</style>
+<body>
+    <h2>Job Application Form</h2>
+
+    <form action="#" method="post" enctype="multipart/form-data">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone"><br><br>
+
+        <label for="position">Position Applying For:</label>
+        <select id="position" name="position">
+            <option>--Select Position--</option>
+            <option>Lawyer</option>
+            <option>Pilot</option>
+        </select><br><br>
+
+        <label for="experience">Years of Experience:</label>
+        <select id="experience" name="experience">
+            <option>--Select Experience--</option>
+            <option>0-1 years</option>
+            <option>1-3 years</option>
+            <option>3-5 years</option>
+            <option>5+ years</option>
+        </select><br><br>
+
+        <label for="coverLetter">Cover Letter:</label><br>
+        <textarea id="coverLetter" name="coverLetter" rows="5" cols="40"></textarea><br><br>
+
+        <label for="resume">Upload Resume:</label>
+        <input type="file" id="resume" name="resume"><br><br>
+
+        <input type="submit" value="Submit Application">
+        <input type="reset" value="Reset Form">
+    </form>
+    
+    <footer>
+        <hr>
+        <p>Name: Rosis Kharel</p>
+        <p>RollNo: 23</p>
+        <p>Faculty: BSc.CSIT 2079</p>
+    </footer>
+</body>
+</html>

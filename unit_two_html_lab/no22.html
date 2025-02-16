@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twenty Two</title>
+</head>
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        text-align: center;
+    }
+    footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      pointer-events: none;
+    }
+</style>
+<body>
+    <h2>Nested Table Layout</h2>
+    <table width="500px;">
+        <tr>
+            <td rowspan="2" width="20%">
+                <img src="images/Lyney.png" alt="Logo" width="50" height="50"><br>
+                <a href="#">Home</a><br>
+                <a href="#">About</a><br>
+                <a href="#">Contact</a>
+            </td>
+            <td>ABC Company</td>
+        </tr>
+        <tr>
+            <td>
+                <table width="100%">
+                    <tr>
+                        <td>Content 1</td>
+                        <td>News 1</td>
+                    </tr>
+                    <tr>
+                        <td>Content 2</td>
+                        <td>News 2</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <table width="100%">
+                    <tr>
+                        <td>Copyright</td>
+                        <td><a href="#">Facebook</a>, <a href="#">Twitter</a></td>
+                        <td>Powered By</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    
+    <footer>
+        <hr>
+        <p>Name: Rosis Kharel</p>
+        <p>RollNo: 23</p>
+        <p>Faculty: BSc.CSIT 2079</p>
+    </footer>
+</body>
+</html>

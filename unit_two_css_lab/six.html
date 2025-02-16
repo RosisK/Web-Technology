@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Six</title>
+</head>
+<style>
+    footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    fieldset {
+        border: 2px solid lightblue;
+        padding: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="url"],
+    input[type="date"],
+    textarea {
+        color: blue;
+    }
+
+    input:focus, textarea:focus {
+        background-color: yellow;
+    }
+
+    select option {
+        height: 30px;
+    }
+
+    input:invalid, textarea:invalid {
+        border: 2px solid red;
+    }
+
+    input:valid, textarea:valid {
+        border: 2px solid green;
+    }
+
+</style>
+<body>
+    <h2>HTML Form</h2>
+    <form>
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br><br>
+
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
+            <br><br>
+
+            <label>Hobbies:</label>
+            <input type="checkbox" name="hobby" value="reading"> Reading
+            <input type="checkbox" name="hobby" value="traveling"> Traveling
+            <input type="checkbox" name="hobby" value="gaming"> Gaming
+            <br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="1" max="100" required>
+            <br><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+            <br><br>
+
+            <label for="website">Website:</label>
+            <input type="url" id="website" name="website" required>
+            <br><br>
+
+            <label for="resume">Upload Resume:</label>
+            <input type="file" id="resume" name="resume">
+            <br><br>
+
+            <label for="color">Favorite Color:</label>
+            <input type="color" id="color" name="color">
+            <br><br>
+
+            <label for="range">Experience Level:</label>
+            <input type="range" id="range" name="range" min="1" max="10">
+            <br><br>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+
+        </fieldset>
+    </form>
+    
+    <footer>
+        <hr>
+        <p>Name: Rosis Kharel</p>
+        <p>RollNo: 23</p>
+        <p>Faculty: BSc.CSIT 2079</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thirteen</title>
+</head>
+<style>
+    footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .highlight {
+        background-color: yellow;
+    }
+</style>
+<body>
+    <h1>jQuery Example</h1>
+    <p class="text_31">This is a paragraph with class 'text_31'.</p>
+    <p id="special_31">This is a paragraph with ID 'special_31'.</p>
+    <p class="text_31">Another paragraph with class 'text_31'.</p>
+
+    <button id="changeText">Change Text</button>
+    <button id="toggleHighlight">Toggle Highlight</button>
+    <button id="toggleParagraph">Hide/Show Paragraph</button>
+    
+    <footer>
+        <hr>
+        <p>Name: Rosis Kharel</p>
+        <p>RollNo: 23</p>
+        <p>Faculty: BSc.CSIT 2079</p>
+    </footer>
+
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $("#changeText").click(function() {
+            $("#special_31").text("The text has been changed using jQuery!");
+        });
+
+        $("#toggleHighlight").click(function() {
+            $(".text_31").toggleClass("highlight");
+        });
+
+        $("#toggleParagraph").click(function() {
+            $("#special_31").toggle();
+        });
+    </script>
+</body>
+</html>

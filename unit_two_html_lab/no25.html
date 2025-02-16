@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twenty Five</title>
+</head>
+<style>
+    footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      pointer-events: none;
+    }
+</style>
+<body>
+    <h2>Event Scheduling Form</h2>
+    <form>
+        <label for="eventName">Event Name:</label>
+        <input type="text" id="eventName" name="eventName"><br><br>
+
+        <label for="eventDateTime">Event Date and Time:</label>
+        <input type="datetime-local" id="eventDateTime" name="eventDateTime"><br><br>
+
+        <input type="submit" value="Schedule Event">
+        <input type="reset" value="Reset">
+    </form>
+
+    <hr>
+
+    <h2>Volume Control</h2>
+    <label for="volume">Set Volume Level:</label>
+    <input type="range" id="volume" name="volume" min="0" max="100" value="50" oninput="output.value = volume.value">
+    <output id="output">50</output>
+    
+    <footer>
+        <hr>
+        <p>Name: Rosis Kharel</p>
+        <p>RollNo: 23</p>
+        <p>Faculty: BSc.CSIT 2079</p>
+    </footer>
+</body>
+</html>

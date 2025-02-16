@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="timer">0:00</div>
+    <button id="startBtn">Start</button>
+    <button id="pauseBtn">Pause</button>
+    <button id="resumeBtn">Resume</button>
+    <button id="resetBtn">Reset</button>
+
+    <script>
+      function createTimer(updateCallback) {
+        let time = 0;
+        let status = "stopped"; // 'stopped', 'running', 'paused'
+        let intervalId;
+
+        function tick() {
+          time++;
+          updateCallback(time);
+        }
+
+        function start() {
+          if (status === "stopped") {
+            time = 0;
+            status = "running";
+            intervalId = setInterval(tick, 1000);
+            updateCallback(time);
+          }
+        }
+
+        function pause() {
+          if (status === "running") {
+            status = "paused";
+            clearInterval(intervalId);
+          }
+        }
+
+        function resume() {
+          if (status === "paused") {
+            status = "running";
+            intervalId = setInterval(tick, 1000);
+          }
+        }
+
+        function reset() {
+          status = "stopped";
+          clearInterval(intervalId);
+          time = 0;
+          updateCallback(time);
+        }
+
+        return {
+          start,
+          pause,
+          resume,
+          reset,
+          getTime: () => time,
+        };
+      }
+
+      // Example usage:
+      const timerDisplay = document.getElementById("timer");
+      const startBtn = document.getElementById("startBtn");
+      const pauseBtn = document.getElementById("pauseBtn");
+      const resumeBtn = document.getElementById("resumeBtn");
+      const resetBtn = document.getElementById("resetBtn");
+
+      function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60)
+          .toString()
+          .padStart(2, "0");
+        const secs = (seconds % 60).toString().padStart(2, "0");
+        return `${mins}:${secs}`;
+      }
+
+      const timer = createTimer((time) => {
+        timerDisplay.textContent = formatTime(time);
+      });
+
+      startBtn.addEventListener("click", () => timer.start());
+      pauseBtn.addEventListener("click", () => timer.pause());
+      resumeBtn.addEventListener("click", () => timer.resume());
+      resetBtn.addEventListener("click", () => timer.reset());
+    </script>
+  </body>
+</html>

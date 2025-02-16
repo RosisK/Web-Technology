@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extended Form Validation</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        label {
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Extended Form Validation</h1>
+    <form id="extendedForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+        <span class="error" id="nameError"></span>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email">
+        <span class="error" id="emailError"></span>
+        <br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password">
+        <span class="error" id="passwordError"></span>
+        <br><br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword">
+        <span class="error" id="confirmPasswordError"></span>
+        <br><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone">
+        <span class="error" id="phoneError"></span>
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        $(document).ready(function() {
+            $("#extendedForm").submit(function(event) {
+                event.preventDefault(); // Prevent form submission
+
+                let isValid = true;
+                $(".error").text(""); // Reset errors
+
+                let name = $("#name").val().trim();
+                let email = $("#email").val().trim();
+                let password = $("#password").val();
+                let confirmPassword = $("#confirmPassword").val();
+                let phone = $("#phone").val().trim();
+
+                let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                let phonePattern = /^(98|97)\d{8}$/; // Nepal phone numbers (starts with 97/98 and has 10 digits)
+
+                if (name === "") {
+                    $("#nameError").text("Name is required.");
+                    isValid = false;
+                }
+
+                if (!emailPattern.test(email)) {
+                    $("#emailError").text("Enter a valid email.");
+                    isValid = false;
+                } else {
+                    $("#emailError").text("Email is ok.").css("color", "green");
+                }
+
+                if (password.length < 6) {
+                    $("#passwordError").text("Password must be at least 6 characters.");
+                    isValid = false;
+                }
+
+                if (password !== confirmPassword) {
+                    $("#confirmPasswordError").text("Passwords do not match.");
+                    isValid = false;
+                }
+
+                if (!phonePattern.test(phone)) {
+                    $("#phoneError").text("Please enter a valid Nepalese phone number.");
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    alert("Form submitted successfully!");
+                    $("#extendedForm")[0].reset(); // Reset form
+                }
+            });
+        });
+    </script>
+
+    <footer>
+        <hr>
+        <p>Name: Rosis Kharel</p>
+        <p>Roll No: 23</p>
+        <p>Faculty: BSc.CSIT 2079</p>
+    </footer>
+
+</body>
+</html>

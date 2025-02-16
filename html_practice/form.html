@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Practice</title>
+
+    <style>
+        body {
+            height: 95vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="submit-url" method="GET">
+        <h1>Student Registration</h1>
+        <table border="0">
+            <tr>
+                <td>Roll no: </td>
+                <td><input type="text" name="roll_no" placeholder="Roll No"></td>
+            </tr>
+            <tr>
+                <td>Student Name: </td>
+                <td><input type="text" name="name" placeholder="Name"></td>
+            </tr>
+            <tr>
+                <td>Address: </td>
+                <td><input type="text" name="address" placeholder="Address"></td>
+            </tr>
+            <tr>
+                <td>Email: </td>
+                <td>
+                    <input type="text" name="email" placeholder="Email">
+                </td>
+            </tr>
+            <tr>
+                <td>Subject: </td>
+                <td>
+                    <input type="checkbox" name="checkbox">Maths
+                    <input type="checkbox" name="checkbox">Science
+                    <input type="checkbox" name="checkbox">English
+                </td>
+            </tr>
+            <tr>
+                <td>Gender: </td>
+                <td>
+                    <input type="radio" name="subject">Male
+                    <input type="radio" name="subject">Female
+                    <input type="radio" name="subject">Other
+                </td>
+            </tr>
+
+            <tr>
+                <td>Class: </td>
+                <td>
+                    <select name="dropdown">
+                        <option value="select">--Select--</option>
+                        <option value="104">104</option>
+                        <option value="105">105</option>
+                        <option value="108">108</option>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>Photo</td>
+                <td>
+                    <input type="file" name="uploadfile" id="img" style="display:none;">
+                    <button type="button"><label for="img">Upload</label></button>
+                </td>
+            </tr>
+
+            <tr>
+                <td><br></td>
+            </tr>
+
+            <tr>
+                <td colspan=2" align="center">
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+</body>
+</html>

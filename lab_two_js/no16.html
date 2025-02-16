@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sixteen</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        label {
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Basic Form Validation</h1>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+        <span class="error" id="nameError"></span>
+        <br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age">
+        <span class="error" id="ageError"></span>
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        $(document).ready(function() {
+            $("#myForm").submit(function(event) {
+                event.preventDefault();
+
+                let isValid = true;
+                $("#nameError").text("");
+                $("#ageError").text("");
+
+                let name = $("#name").val().trim();
+                let age = $("#age").val().trim();
+
+                if (name === "") {
+                    $("#nameError").text("Name is required.");
+                    isValid = false;
+                }
+
+                if (age === "" || isNaN(age) || age <= 0) {
+                    $("#ageError").text("Please enter a valid age.");
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    alert("Form submitted successfully!");
+                    $("#myForm")[0].reset();
+                }
+            });
+        });
+    </script>
+
+    <footer>
+        <hr>
+        <p>Name: Rosis Kharel</p>
+        <p>Roll No: 23</p>
+        <p>Faculty: BSc.CSIT 2079</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 100px;
+}
+
+a {
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    padding: 20px 80px;
+    text-decoration: none;
+    color: black;
+}

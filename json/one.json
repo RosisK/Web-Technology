@@ -1,0 +1,22 @@
+{
+    "name": "Rosis Kharel",
+    "age": 21,
+    "isStudent": true,
+    "skills": ["JavaScript", "Python", "JSON"],
+    "address": {
+        "street": "Pepsi Cola",
+        "city": "Kathmandu",
+        "Province": "Bagmati",
+        "mobile": "98123456890"
+    },
+    "projects": [
+        {
+            "name": "Project A",
+            "status": "completed"
+        },
+        {
+            "name": "Project B",
+            "status": "completed"
+        }
+    ]
+}

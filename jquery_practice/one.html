@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    li {
+        color: blue;
+    }
+    .seasonal {
+        color: black;
+    }
+    .hot {
+        color: red;
+    }
+
+</style>
+<body>
+    <ul>
+        <li class="hot">1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <script src="public/jquery.min.js"></script>
+    <script>
+        $('li.hot').addClass('seasonal');
+    </script>
+</body>
+</html>

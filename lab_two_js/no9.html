@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nine</title>
+</head>
+<style>
+    footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+    }
+    </style>
+<body>
+    <h1>Car Object</h1>
+    <button id="btn">Update Car Properties</button>
+    <p id="speed"></p>
+    <footer>
+        <hr>
+        <p>Name: Rosis Kharel</p>
+        <p>RollNo: 23</p>
+        <p>Faculty: BSc.CSIT 2079</p>
+    </footer>
+
+    <script>
+        const car = {
+            speed: 0,
+            acceleration: 1,
+            accelatate: function() {
+                this.speed++;
+            }
+        }
+
+        const button = document.getElementById("btn");
+        const para = document.getElementById("speed");
+
+        button.addEventListener("click", () => {
+            car.accelatate();
+            para.innerHTML = "Speed: " + car.speed;
+        });
+        
+    </script>
+</body>
+</html>

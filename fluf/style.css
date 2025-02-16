@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    flex-wrap: wrap;
+    flex-direction: column;
+    color: white;
+    font-family: Arial;
+}
+
+h1 {
+    display: inline-block;
+    margin: 0 0;
+}
+
+.mega-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #292121;
+    padding: 5rem 5rem;
+}
+
+.sub-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    column-gap: 6px;
+}
+
+#input-btn {
+    background-color: #2e60e9;
+    border-style: none;
+    border-radius: 13%;
+    font-weight: bold;
+    padding: 7px;
+}
+
+.task-item {
+    display: flex;
+    border-width: 1px;
+    border-color: white;
+    border-style: solid;
+    width: 100%;
+}
