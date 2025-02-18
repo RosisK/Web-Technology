@@ -2,6 +2,15 @@ const inputBox = document.getElementById("input-box");
 const inputBtn = document.getElementById("input-btn");
 const container = document.querySelector(".mega-container");
 
+// Attach event listener to the container for delegation
+container.addEventListener("click", (event) => {
+    if (event.target.classList.contains("delete-btn")) {
+        removeItem(event.target);
+    } else if (event.target.classList.contains("edit-btn")) {
+        editItem(event.target);
+    }
+})
+
 function addItem() {
     // Creating elements
     const itemDiv = document.createElement("div");
@@ -14,15 +23,20 @@ function addItem() {
     
     // Assigning properties
     checkBox.type = "checkbox";
+    deleteBtn.textContent = "Delete";
+    editBtn.textContent = "Edit";
 
+    // Add classes to buttons for targeting via delegations
+    deleteBtn.classList.add("delete-btn");
+    editBtn.classList.add("edit-btn");
+    
+    taskText.textContent = inputBox.value;
+    
     itemDiv.classList.add("task-item");
     itemLeftDiv.classList.add("task-item-left");
     itemRightDiv.classList.add("task-item-right");
 
-    deleteBtn.textContent = "Delete";
-    editBtn.textContent = "Edit";
 
-    taskText.textContent = inputBox.value;
     
     itemDiv.appendChild(itemLeftDiv);
     itemDiv.appendChild(itemRightDiv);
@@ -32,14 +46,11 @@ function addItem() {
     itemRightDiv.appendChild(editBtn);
 
     container.appendChild(itemDiv);
-
-    function removeItem() {
-        container.removeChild(itemDiv);
-    }
-    
-    deleteBtn.addEventListener("click", removeItem);
 }
 
-
+function removeItem(deleteButton) {
+    const itemDiv = deleteButton.closest("task-item");
+    container.removeChild(itemDiv);
+}
 
 inputBtn.addEventListener("click", addItem);
