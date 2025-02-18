@@ -17,11 +17,11 @@ function addItem() {
 
     itemDiv.classList.add("task-item");
     itemLeftDiv.classList.add("task-item-left");
+    itemRightDiv.classList.add("task-item-right");
 
-    deleteBtn.classList.add("taskEditBtn");
     deleteBtn.textContent = "Delete";
     editBtn.textContent = "Edit";
-    editBtn.classList.add("taskEditBtn");
+
     taskText.textContent = inputBox.value;
     
     itemDiv.appendChild(itemLeftDiv);
@@ -32,6 +32,14 @@ function addItem() {
     itemRightDiv.appendChild(editBtn);
 
     container.appendChild(itemDiv);
+
+    function removeItem() {
+        container.removeChild(itemDiv);
+    }
+    
+    deleteBtn.addEventListener("click", removeItem);
 }
+
+
 
 inputBtn.addEventListener("click", addItem);
