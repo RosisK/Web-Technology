@@ -43,8 +43,21 @@ h1 {
 
 .task-item {
     display: flex;
-    border-width: 1px;
-    border-color: white;
-    border-style: solid;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 5px;
     width: 100%;
+    padding: 0 10px;
+}
+
+.task-item button {
+    border-style: none;
+    background-color: inherit;
+    color: red;
+    cursor: pointer;
+}
+
+.task-item-left {
+    display: flex;
 }

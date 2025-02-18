@@ -16,6 +16,7 @@ function addItem() {
     checkBox.type = "checkbox";
 
     itemDiv.classList.add("task-item");
+    itemLeftDiv.classList.add("task-item-left");
 
     deleteBtn.classList.add("taskEditBtn");
     deleteBtn.textContent = "Delete";
