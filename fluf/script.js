@@ -31,13 +31,13 @@ function addItem() {
     editBtn.classList.add("edit-btn");
     
     taskText.textContent = inputBox.value;
-    
+
+    // Adding classes to item containers
     itemDiv.classList.add("task-item");
     itemLeftDiv.classList.add("task-item-left");
     itemRightDiv.classList.add("task-item-right");
 
-
-    
+    // Appending items
     itemDiv.appendChild(itemLeftDiv);
     itemDiv.appendChild(itemRightDiv);
     itemLeftDiv.appendChild(checkBox);
@@ -49,7 +49,7 @@ function addItem() {
 }
 
 function removeItem(deleteButton) {
-    const itemDiv = deleteButton.closest("task-item");
+    const itemDiv = deleteButton.closest(".task-item");
     container.removeChild(itemDiv);
 }
 
