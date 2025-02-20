@@ -1,0 +1,9 @@
+<xsl:stylesheet version="1.0"
+xmlns:xls="https://google.com">
+
+<xsl:template match="/">
+    <html>
+    <body>
+    <h2>Transformed output</h2>
+    </body>
+    </html>
