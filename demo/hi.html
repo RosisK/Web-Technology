@@ -8,55 +8,27 @@
 </head>
 
 <body>
-    <form action="">
-        <input placeholder="name" type="text" id="name">
-        <input placeholder="age" type="text" id="age">
-        <input placeholder="email" type="text" id="email">
-        <input placeholder="password" type="text" id="pass">
+    <form>
+        <label>Username
+            <input type="text">
+        </label><br><br>
 
-        <button id="submit">Submit</button>
+        <label>Password
+            <input type="text">
+        </label><br><br>
+
+        <label>Password
+            <select></select>
+        </label><br><br>
+
+        <label>Password
+            <input type="text">
+        </label><br><br>
     </form>
 
+
     <script>
-        const name = document.getElementById("name");
-        const age = document.getElementById("age");
-        const email = document.getElementById("email");
-        const pass = document.getElementById("pass");
-        const inputs = document.querySelectorAll("input");
 
-        const submit = document.getElementById("submit");
-
-        let isValid = true;
-
-        submit.addEventListener("click", () => {
-            event.preventDefault();
-            inputs.forEach(input => {   
-                if (input.value === "") {
-                    isValid = false;
-                }
-            });
-
-            if (!email.value.includes("@")) {
-                isValid = false;
-            }
-
-            if (pass.value.length < 6) {
-                isValid = false;
-            }
-            // if (isNaN(Number(password.length - 1))) {
-            //     isValid = false;
-            // }
-
-            if (Number(age.value) < 18 || Number(age.value) > 60) {
-                isValid = false;
-            }
-
-            if (isValid) {
-                alert("Is Valid");
-            } else {
-                alert("Is not Valid");
-            }
-        });
     </script>
 </body>
 
