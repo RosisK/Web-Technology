@@ -22,5 +22,3 @@ if(!$id){
     header("Location: categories.php");
  }
 ?>
-
-
