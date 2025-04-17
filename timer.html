@@ -79,7 +79,6 @@
       const timer = createTimer((time) => {
         timerDisplay.textContent = formatTime(time);
       });
-
       startBtn.addEventListener("click", () => timer.start());
       pauseBtn.addEventListener("click", () => timer.pause());
       resumeBtn.addEventListener("click", () => timer.resume());
