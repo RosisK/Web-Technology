@@ -75,7 +75,6 @@
         const secs = (seconds % 60).toString().padStart(2, "0");
         return `${mins}:${secs}`;
       }
-
       const timer = createTimer((time) => {
         timerDisplay.textContent = formatTime(time);
       });
