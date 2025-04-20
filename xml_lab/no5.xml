@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE person [ 
+    <!ELEMENT person (name, age, children?)> 
+    <!ELEMENT name (fname, mi?, lname)> 
+    <!ELEMENT children (person*)> 
+    <!ELEMENT fname (#PCDATA)>
+    <!ELEMENT lname (#PCDATA)> 
+    <!ELEMENT age (#PCDATA)> 
+]> 
+<person> 
+    <name> 
+        <fname>Hello</fname> 
+        <lname>Kharel</lname> 
+    </name> 
+    <age>50</age> 
+    <children> 
+        <person> 
+            <name>
+                <fname>Rosis</fname>
+                <lname>Kharel</lname>
+            </name> 
+            <age>20</age> 
+        </person> 
+        <person> 
+            <name> 
+                <fname>World</fname> 
+                <lname>Kharel</lname> 
+            </name> 
+            <age>21</age> 
+        </person> 
+    </children> 
+</person> 

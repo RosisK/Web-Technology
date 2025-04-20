@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE Report [ 
+    <!ELEMENT Report (Students, Classes, Courses)> 
+    <!ELEMENT Students (Student*)> 
+    <!ELEMENT Classes (Class*)> 
+    <!ELEMENT Courses (Course*)> 
+    <!ELEMENT Student (Name, Status, CrsTaken*)> 
+    <!ELEMENT Name (First, Last)> 
+    <!ELEMENT First (#PCDATA)> 
+    <!ELEMENT Last (#PCDATA)> 
+    <!ELEMENT Status (#PCDATA)> 
+    <!ELEMENT CrsTaken (#PCDATA)> 
+    <!ELEMENT Class (Semester, ClassRoster)> 
+    <!ELEMENT Semester (#PCDATA)> 
+    <!ELEMENT ClassRoster (#PCDATA)> 
+    <!ELEMENT Course (#PCDATA)> 
+    <!ATTLIST Student StudId ID #REQUIRED> 
+    <!ATTLIST Course CrsCode ID #REQUIRED> 
+    <!ATTLIST CrsTaken CrsCode IDREF #REQUIRED> 
+    <!ATTLIST ClassRoster Members IDREFS #REQUIRED> 
+]> 
+<Report> 
+    <Students> 
+        <Student StudId="S1"> 
+           <Name> 
+                <First>Rosis</First> 
+                <Last>Kharel</Last> 
+           </Name> 
+           <Status>Active</Status> 
+           <CrsTaken CrsCode="C201">Computer</CrsTaken> 
+           <CrsTaken CrsCode="C202">Mathematics</CrsTaken> 
+        </Student> 
+        <Student StudId="S2"> 
+            <Name> 
+                <First>Joseph</First> 
+                <Last>Ross</Last> 
+            </Name> 
+            <Status>Inactive</Status> 
+            <CrsTaken CrsCode="C222">Physics</CrsTaken> 
+        </Student> 
+    </Students> 
+    <Classes> 
+        <Class> 
+            <Semester>2025</Semester> 
+            <ClassRoster Members="S1 S2"/> 
+        </Class> 
+    </Classes> 
+    
+    <Courses> 
+        <Course CrsCode="C201">Computer Science</Course> 
+        <Course CrsCode="C202">Mathematics</Course> 
+        <Course CrsCode="C222">Physics</Course> 
+    </Courses> 
+</Report>

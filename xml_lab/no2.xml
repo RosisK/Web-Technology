@@ -1,0 +1,10 @@
+<book> 
+        <title>Web Tech</title> 
+        <author>Rosis Kharel</author> 
+        <year>2025</year> 
+        <genre>New Era</genre> 
+        <publisher> 
+            <name>Edward</name> 
+            <address>Earth</address> 
+        </publisher> 
+    </book> 
