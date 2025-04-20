@@ -1,55 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Six</title>
-</head>
-<style>
-    footer {
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-    }
-    </style>
-<body>
+    <!DOCTYPE html>
+    <head>
+        <title>Six</title>
+    </head>
+    <body>
+        <footer>
+            <hr>
+            <p>Name: Rosis Kharel</p>
+            <p>RollNo: 23</p>
+            <p>Faculty: BSc.CSIT 2079</p>
+        </footer>
 
-    <footer>
-        <hr>
-        <p>Name: Rosis Kharel</p>
-        <p>RollNo: 23</p>
-        <p>Faculty: BSc.CSIT 2079</p>
-    </footer>
-
-    <script>
-        const array = [5, 4, 3, 2, 1];
-        document.write(`<p>Array Methods:</p>`);
-        document.write(`<p>Sorted Array: ${array.sort()}</p>`);
-        array.push(10);
-        document.write(`<p>Array after push: ${array}</p>`);
-        array.pop(10);
-        document.write(`<p>Array after pop: ${array}</p>`);
-
-        document.write("<hr>");
-        
-        const date = new Date();
-        document.write("<p>Date Methods:" + "</p>");
-        document.write("<p>Day: " + date.getDay() + "</p>");
-        document.write("<p>Month: " + date.getMonth() + "</p>");
-        document.write("<p>Year: " + date.getFullYear() + "</p>");
-        document.write("<p>Full Date: " + date.getFullYear() + "/" + date.getMonth() + "/" + date.getDate() + "</p>");
-        
-        document.write("<hr>");
-
-        const name = "Rosis";
-        document.write("<p>At index 1 of " + name + " is " + name.charAt(1) + "</p>");
-
-        document.write("<hr>");
-
-        const num = 100;
-        document.write("<p>Square root of 100 is: " + Math.sqrt(num) + "</p>");
-    </script>
-</body>
-</html>
+        <script>
+            const array = [5, 4, 3, 2, 1];
+            document.write(`<p>Array Methods:</p>`);
+            document.write(`<p>Sorted Array: ${array.sort()}</p>`);
+            array.push(10);
+            document.write(`<p>Array after push: ${array}</p>`);
+            array.pop(10);
+            document.write(`<p>Array after pop: ${array}</p>`);
+            document.write("<hr>");
+            const date = new Date();
+            document.write("<p>Date Methods:" + "</p>");
+            document.write("<p>Day: " + date.getDay() + "</p>");
+            document.write("<p>Month: " + date.getMonth() + "</p>");
+            document.write("<p>Year: " + date.getFullYear() + "</p>");
+            document.write("<p>Full Date: " + date.getFullYear() + "/" + date.getMonth() + "/" + date.getDate() + "</p>");
+            document.write("<hr>");
+            const name = "Rosis";
+            document.write("<p>At index 1 of " + name + " is " + name.charAt(1) + "</p>");
+            document.write("<hr>");
+            const num = 100;
+            document.write("<p>Square root of 100 is: " + Math.sqrt(num) + "</p>");
+        </script>
+    </body>
+    </html>
