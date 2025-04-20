@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h2>Event Handling in JavaScript</h2>
+    <button onclick="sayHello()">Inline Click</button><br><br>
+    <button id="domBtn">DOM Property Click</button><br><br>
+    <button id="addBtn">addEventListener Click</button><br><br>
+    <input type="text" id="nameInput" placeholder="Type something"><br>
+    <p id="output"></p>
+    <script>
+        function sayHello() { alert("Hello from inline event!") }
+        document.getElementById("domBtn").onclick = function () { alert("Hello from DOM property event!") }
+        document.getElementById("addBtn").addEventListener("click", function () { alert("Hello from addEventListener!") })
+        document.getElementById("nameInput").addEventListener("keyup", function () { document.getElementById("output").textContent = "You typed: " + this.value })  
+    </script>
+    <footer>
+        <hr>
+        <p>Name: Rosis Kharel</p>
+        <P>Roll no: 22</P>
+        <p>Faculty: Bsc.CSIT</p>
+    </footer>
+</body>
+</html>
