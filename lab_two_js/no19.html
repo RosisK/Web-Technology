@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h2>College Admission Form</h2>
+    <form id="myForm" onsubmit="return validateForm()">
+        Name: <input type="text" id="name"><br><br>
+        Age: <input type="text" id="age"><br><br>
+        Phone Number: <input type="text" id="phone"><br><br>
+        Email: <input type="text" id="email"><br><br> College:
+        <select id="college">
+            <option value="">Select College</option>
+            <option value="college1">College A</option>
+            <option value="college2">College B</option>
+            <option value="college3">College C</option>
+        </select><br><br> Gender:
+        <input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="female">Female<br><br>
+        <input type="checkbox" id="terms"> I accept all the terms<br><br>
+        <button type="submit">Submit</button>
+        <div id="msg"></div>
+    </form>
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value.trim(); let age = document.getElementById("age").value.trim(); let phone = document.getElementById("phone").value.trim(); let email = document.getElementById("email").value.trim(); let college = document.getElementById("college").value; let gender = document.querySelector('input[name="gender"]:checked'); let terms = document.getElementById("terms").checked; let msg = "";
+            let nameRegex = /^[a-zA-Z\s]{7,}$/; if (!nameRegex.test(name)) {
+                msg += "<div class='error'>Name must be at least 7 characters long and only contain letters and spaces.</div>";
+            }
+            let ageInt = parseInt(age);
+            if (!Number.isInteger(ageInt) || ageInt < 1 || ageInt > 50) {
+                msg += "<div class='error'>Age must be an integer between 1 and 50.</div>";
+            }
+            let phoneRegex = /^(98|97)[0-9]{8}$/; if (!phoneRegex.test(phone)) {
+                msg += "<div class='error'>Phone number must be 10 digits and start with 98 or 97.</div>";
+            }
+            let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/; if (!emailRegex.test(email)) {
+                msg += "<div class='error'>Please enter a valid email address.</div>";
+            }
+            if (college === "") {
+                msg += "<div class='error'>Please select a college.</div>";
+            } if (!gender) {
+                msg += "<div class='error'>Please select your gender.</div>";
+            } if (!terms) {
+                msg += "<div class='error'>You must accept the terms.</div>";
+            }
+            let msgDiv = document.getElementById("msg"); if (msg === "") {
+                msgDiv.innerHTML = "<div class='success'>Form submitted successfully!</div>"; return false; 
+            } else {
+                msgDiv.innerHTML = msg;
+                return false;
+            }
+        } 
+    </script>
+    <footer>
+        <hr>
+        <p>Name: Rosis Kharel</p>
+        <P>Roll no: 22</P>
+        <p>Faculty: Bsc.CSIT</p>
+    </footer>
+</body>
+</html>
