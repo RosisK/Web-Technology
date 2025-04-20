@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h2>Conditional Postal Code Validation</h2>
+    <form id="condForm">
+        Country:
+        <select id="country">
+            <option value="">Select Country</option>
+            <option value="np">Nepal</option>
+            <option value="us">USA</option>
+        </select><br><br>
+        Postal Code: <input type="text" id="postal">
+        <div id="postalMsg"></div><br>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        $(document).ready(function () {
+            $('#country, #postal').on('change keyup', function () {
+                validatePostal();
+            });
+            function validatePostal() {
+                let country = $('#country').val(); let postal = $('#postal').val().trim(); let msg = ''; if (country === 'np') {
+                    let npRegex = /^[0-9]{5}$/;
+                    msg = npRegex.test(postal) ? "<div class='success'>Valid Nepali postal code.</div>" : "<div class='error'>Nepal postal code must be 5 digits.</div>";
+                } else if (country === 'us') {
+                    let usRegex = /^[0-9]{5}(-[0-9]{4})?$/;
+                    msg = usRegex.test(postal) ? "<div class='success'>Valid US ZIP code.</div>" : "<div class='error'>US ZIP must be 5 digits or ZIP+4 (e.g. 12345-6789).</div>";
+                } else {
+                    msg = "<div class='error'>Please select a country first.</div>";
+                }
+                $('#postalMsg').html(msg);
+            }
+            $('#condForm').submit(function (e) {
+                validatePostal();
+                if ($('.error').length > 0) e.preventDefault();
+            });
+        }); 
+    </script>
+    <footer>
+        <hr>
+        <p>Name: Rosis Kharel</p>
+        <P>Roll no: 22</P>
+        <p>Faculty: Bsc.CSIT</p>
+    </footer>
+</body>
+</html>
