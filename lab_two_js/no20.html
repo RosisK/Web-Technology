@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Real-Time Form Validation</h2>
+    <form>
+        Name: <input type="text" id="name">
+        <div id="nameMsg"></div><br>
+        Age: <input type="text" id="age">
+        <div id="ageMsg"></div><br>
+        Phone Number: <input type="text" id="phone">
+        <div id="phoneMsg"></div><br>
+        Email: <input type="text" id="email">
+        <div id="emailMsg"></div><br>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        $(document).ready(function () {
+            $('#name').on('input', function () {
+                let val = $(this).val().trim();
+                let regex = /^[a-zA-Z\s]{7,}$/;
+                $('#nameMsg').html(
+                    regex.test(val) ? "<div class='success'>Name is valid.</div>" : "<div class='error'>Name must be at least 7 characters long and contain only alphabets and spaces.</div>"
+                );
+            });
+            $('#age').on('input', function () {
+                let age = parseInt($(this).val());
+                $('#ageMsg').html(
+                    Number.isInteger(age) && age >= 1 && age <= 50 ?
+                    "<div class='success'>Age is valid.</div>" :
+                    "<div class='error'>Age must be an integer between 1 and 50.</div>"
+                );
+            });
+            $('#phone').on('input', function () {
+                let phone = $(this).val();
+                let phoneRegex = /^(98|97)[0-9]{8}$/;
+                $('#phoneMsg').html(
+                    phoneRegex.test(phone) ?
+                    "<div class='success'>Phone number is valid.</div>" :
+                    "<div class='error'>Phone number must be exactly 10 digits long and start with 98 or 97.</div>"
+                );
+            });
+            $('#email').on('input', function () {
+                let email = $(this).val();
+                let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+                $('#emailMsg').html(
+                    emailRegex.test(email) ?
+                    "<div class='success'>Email is valid.</div>" :
+                    "<div class='error'>Invalid email address.</div>"
+                );
+            });
+        });
+    </script>
+    <footer>
+        <hr>
+        <p>Name: Rosis Kharel</p>
+        <P>Roll no: 22</P>
+        <p>Faculty: Bsc.CSIT</p>
+    </footer>
+</body>
+</html>
